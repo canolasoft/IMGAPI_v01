@@ -19,9 +19,9 @@ class Artista(models.Model):
 class Redsocial(models.Model):
 	id_rs = models.BigAutoField(primary_key=True)
 	id_a = models.ForeignKey(Artista, on_delete=models.SET_NULL, null=True)
-	nombre_rs = models.CharField(max_length=20)
-	imagen_rs = models.ImageField(null=True, blank=True)
-	url_rs = models.CharField(max_length=150)
+	nombre_rs = models.CharField(max_length=30)
+	imagen_rs = models.CharField(max_length=150, null=True)
+	url_rs = models.CharField(max_length=150, null=True)
 	def __str__(self):
 		return self.nombre_rs
 
@@ -32,6 +32,22 @@ class Redsocial(models.Model):
 		except:
 			url = ''
 		return url
+
+#class RedsocialArtista(models.Model):
+#	id_rs = models.ForeignKey(Redsocial, related_name='Redsocial_id_rs', on_delete=models.SET_NULL, null=True)
+#	id_a = models.ForeignKey(Artista, on_delete=models.SET_NULL, null=True)
+#	imagen_rs = models.ForeignKey(Redsocial, related_name='Redsocial_imagen_rs', on_delete=models.SET_NULL, null=True)
+#	url_rsa = models.CharField(max_length=150)
+#	def __str__(self):
+#		return self.url_rsa
+#
+#	@property
+#	def imageURL(self):
+#		try:
+#			url = self.imagen_rs.url
+#		except:
+#			url = ''
+#		return url
 
 class Wallpaper(models.Model):
 	id_w = models.BigAutoField(primary_key=True)
@@ -50,8 +66,10 @@ class Wallpaper(models.Model):
 		return url
 
 class Datapp(models.Model):
-	nombreapp = models.CharField(max_length=20)
+	titulomapp = models.CharField(max_length=50)
+	mensajeapp = models.CharField(max_length=150)
 	linkapp = models.CharField(max_length=150)
-	keyapp = models.CharField(max_length=100)
+	keyapp = models.CharField(max_length=200)
+	iconapp = models.CharField(max_length=10)
 	def __str__(self):
-		return self.nombreapp
+		return self.mensajeapp
