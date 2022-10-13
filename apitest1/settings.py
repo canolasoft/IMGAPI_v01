@@ -23,13 +23,13 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'hqb4@z2jtw+#4=2i9zw4*pso_eq3(7)&z(ueb*b4yxbfr6iklj'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+#DEBUG = True
 # HEROKU
-# DEBUG = False
+DEBUG = False
 
 # HEROKU
-# ALLOWED_HOSTS = ['l2donatest.herokuapp.com', '127.0.0.1']
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['canolasoft.pythonanywhere.com' ,'l2donatest.herokuapp.com', '127.0.0.1']
+#ALLOWED_HOSTS = []
 
 
 # Application definition
