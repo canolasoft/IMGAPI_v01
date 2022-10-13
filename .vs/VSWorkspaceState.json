@@ -1,0 +1,13 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\apitest1",
+    "\\myapi",
+    "\\myapi\\templates",
+    "\\myapi\\templates\\landing",
+    "\\myapi\\templates\\store",
+    "\\store"
+  ],
+  "SelectedNode": "\\myapi\\views.py",
+  "PreviewInSolutionExplorer": false
+}
