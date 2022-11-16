@@ -17,14 +17,10 @@ Including another URLconf
 from django.urls import include, path
 #from rest_framework import routers
 from myapi.views import *
-from myapi import views
 
 # Wire up our API using automatic URL routing.
 # Additionally, we include login URLs for the browsable API.
 urlpatterns = [
-	############# index
-	path('index/', views.index, name='index'),
-	path('', views.index),
 
 	############# serializers
 	# consulta 0: dame los Datos de la app
@@ -41,5 +37,12 @@ urlpatterns = [
 
 	# consulta 4: dame todas las redes de un artista (id)
 	path('qry4/', RedsocialSerializer.as_view(), name='qry4'),
+
+	############# Landing
+	# Home index (lista de artistas)
+	path('', index, name=''),
+
+	# Artista perfil (datos del artista y lista de videos)
+	path('artista', artista, name='artista'),
 ]
 
